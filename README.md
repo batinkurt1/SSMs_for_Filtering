@@ -1,4 +1,4 @@
-This is the code for this paper "On the Generalization Properties of Selective State-Space Models for Filtering Tasks for Unknown Systems" by Alex Tang$^\dag$, M. Emrullah Ildiz$^\dag$, Batin Kurt, Samet Oymak, and Necmiye Ozay.
+This is the code for this paper "On the Generalization Properties of Selective State-Space Models for Filtering Tasks for Unknown Systems" by Alex Tang*, M. Emrullah Ildiz*, Batin Kurt, Samet Oymak, and Necmiye Ozay.
 
 # Mamba Output Predictor
 
