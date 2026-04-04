@@ -1,6 +1,6 @@
-This is the code for this paper "On the Generalization Properties of Selective State-Space Models for Filtering Tasks for Unknown Systems" by Alex Tang$^\dag$, M. Emrullah Ildiz$^\dag$, Batin Kurt, Samet Oymak, and Necmiye Ozay.
+This is the code for this paper "On the Generalization Properties of Selective State-Space Models for Filtering Tasks for Unknown Systems" by Alex Tang*, M. Emrullah Ildiz*, Batin Kurt, Samet Oymak, and Necmiye Ozay.
 
-# Mamba Output Predictor
+# SSMs for Filtering
 
 This repository provides a full experimental pipeline for training and evaluating sequence models on filtering tasks under unknown system dynamics. The code supports both linear time-invariant (LTI) and drone systems, with experiments that cover:
 
@@ -125,7 +125,7 @@ Each test result includes:
 `src/plotting/plot_results.py` reads per-case test pickles from `configs/plot.yaml` and generates:
 
 - A combined 2x2 case figure
-- Optional per-case standalone figures
+- Per-case standalone figures
 
 Default output directory is `plots`.
 
@@ -153,8 +153,3 @@ python main.py
 - `test` for serialized test metrics
 - `plots` for RMS figures
 
-## Reproducibility
-
-- Seeds are controlled in config files (for example, `train.yaml` contains `seed`).
-- Test cases and model run directories are explicitly selected in `configs/test.yaml`.
-- Plot inputs are explicitly mapped in `configs/plot.yaml`.
