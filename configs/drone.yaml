@@ -1,0 +1,79 @@
+system: drone
+
+# Simulation horizon and discretization.
+dt: 0.1
+n_steps: 50
+length_generalization_n_steps: 30
+colored_noise_sum_k: 15
+
+# Initial condition prior.
+initial_state_mean: [0, 0, 0, 0, 0, 0]
+initial_state_cov:
+    [[0.1, 0, 0, 0, 0, 0],
+     [0, 0.1, 0, 0, 0, 0],
+     [0, 0, 0.1, 0, 0, 0],
+     [0, 0, 0, 0.1, 0, 0],
+     [0, 0, 0, 0, 0.1, 0],
+     [0, 0, 0, 0, 0, 0.1]]
+
+# Process noise.
+process_noise_mean: [0, 0, 0, 0, 0, 0]
+process_noise_cov:
+    [[0.01, 0, 0, 0, 0, 0],
+     [0, 0.01, 0, 0, 0, 0],
+     [0, 0, 0.01, 0, 0, 0],
+     [0, 0, 0, 0.01, 0, 0],
+     [0, 0, 0, 0, 0.01, 0],
+     [0, 0, 0, 0, 0, 0.01]]
+
+# Measurement noise.
+measurement_noise_mean: [0, 0, 0]
+measurement_noise_cov:
+    [[0.01, 0, 0],
+     [0, 0.01, 0],
+     [0, 0, 0.01]]
+
+# Dynamics and clipping.
+clip_state: true
+input_enabled: true  # always true for drone
+randomized_matrices: true  # randomize C, m, l, J for each trajectory
+
+# Initialization bounds. (only used during initialization)
+xmin: -5
+xmax: 5
+zmin: -5
+zmax: 5
+
+# Velocity and angle bounds. (used at each step when clip_state is true)
+vxmin: -2
+vxmax: 2
+vzmin: -1
+vzmax: 1
+phimin: -1.0471975512   # -pi/3
+phimax: 1.0471975512    # pi/3
+phidotmin: -0.7853981634  # -pi/4
+phidotmax: 0.7853981634   # pi/4
+
+# Parameter bounds for randomization.
+mmin: 0.1
+mmax: 1.0
+lmin: 0.1
+lmax: 1.0
+Jmin: 0.001
+Jmax: 0.01
+Cmin: -1.0
+Cmax: 1.0
+
+# Input range and gravity.
+umin: 2.0
+umax: 3.0
+g: 9.81
+
+# Optional fixed parameters; ignored when randomized_matrices is true.
+m: 0.486   # kg
+l: 0.25    # m
+J: 0.00383 # kg m^2
+C:
+    [[1, 0, 0, 0, 0, 0],
+     [0, 1, 0, 0, 0, 0],
+     [0, 0, 1, 0, 0, 0]]

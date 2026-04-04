@@ -1,0 +1,64 @@
+system: lti_system
+
+# Trajectory length.
+n_steps: 50
+length_generalization_n_steps: 30
+colored_noise_sum_k: 15
+
+# Initial condition prior.
+initial_state_mean: [0, 0, 0, 0, 0]
+initial_state_cov:
+    [[0.1, 0, 0, 0, 0],
+     [0, 0.1, 0, 0, 0],
+     [0, 0, 0.1, 0, 0],
+     [0, 0, 0, 0.1, 0],
+     [0, 0, 0, 0, 0.1]]
+
+# Process noise.
+process_noise_mean: [0, 0, 0, 0, 0]
+process_noise_cov:
+    [[0.01, 0, 0, 0, 0],
+     [0, 0.01, 0, 0, 0],
+     [0, 0, 0.01, 0, 0],
+     [0, 0, 0, 0.01, 0],
+     [0, 0, 0, 0, 0.01]]
+
+# Measurement noise.
+measurement_noise_mean: [0, 0, 0]
+measurement_noise_cov:
+    [[0.01, 0, 0],
+     [0, 0.01, 0],
+     [0, 0, 0.01]]
+
+# Randomization settings.
+randomized_matrices: true
+state_dimension: 5
+input_dimension: 2
+output_dimension: 3
+matrix_dist: uniform
+# Desired spectral radius used when sampling random A; keeps dynamics stability controlled.
+target_rho: 0.95
+
+# Input bounds.
+input_enabled: false
+umin: -0.5
+umax: 0.5
+
+# Fixed system matrices; ignored when randomized_matrices is true.
+A:
+    [[0.6, 0, 0, 1, 0],
+     [0, 0.6, 0, 0, 1],
+     [0, 0, 0.7, 0, 0],
+     [0, 0, 0, 0.7, 0],
+     [0, 0, 0, 0, 0.7]]
+B:
+    [[0, 0],
+     [0, 0],
+     [0, 0],
+     [1, 0],
+     [0, 1]]
+C:
+    [[1, 0, 0, 0, 0],
+     [0, 1, 0, 0, 0],
+     [0, 0, 1, 0, 0]]
+

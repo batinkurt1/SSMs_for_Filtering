@@ -1,0 +1,52 @@
+# Data paths. 
+data_path_standard: data/lti/N10000-S50-no_input-random_matrices/lti_dataset.pkl
+data_path_colored_noise: data/lti/N10000-S50-no_input-random_matrices-colored_noise/lti_dataset.pkl
+data_path_length_generalization: data/lti/N10000-S30-no_input-random_matrices/lti_dataset.pkl
+
+# Training flags.
+standard: true
+colored_noise: true
+length_generalization: true
+
+# Data split and reproducibility.
+train_ratio: 0.9
+seed: 42
+
+# Forecasting setup.
+H: 1
+L: null  # null means full context
+normalize: true
+models: [ssm, gpt2]
+
+# Optimization.
+batch_size: 64
+epochs: 50
+lr: 0.0003
+weight_decay: 0.01
+grad_clip: 1.0
+loss_reduction: mean
+num_workers: 8
+dropout: 0.1
+outputs_dir: outputs
+
+
+# GPT-2 settings.
+gpt_d_model: 64
+gpt_n_layer: 2
+n_head: 2
+max_len: 120
+
+# SSM settings.
+ssm_d_model: 512
+ssm_n_layer: 1
+n_x: 256
+s_A: -0.1
+use_delta: true
+fix_sA: false
+
+# Mamba settings.
+mamba_d_model: 128
+mamba_n_layer: 4
+d_state: 256
+d_conv: 4
+expand: 2

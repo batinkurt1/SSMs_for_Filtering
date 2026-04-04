@@ -1,0 +1,50 @@
+case_results_paths:
+  standard: test/lti_test_results_standard.pkl
+  length_generalization: test/lti_test_results_length_generalization.pkl
+  colored_noise: test/lti_test_results_colored_noise.pkl
+  dynamics_switching: test/lti_test_results_dynamics_switching.pkl
+
+outdir: plots
+rms_horizon: 1
+rms_case_dpi: 300
+rms_show_error_bands: false
+show_figs: true
+use_log_y: false
+show_switch_marker: true
+
+axis:
+  xlabel: t
+  ylabel: RMS prediction error
+  ylim: [0.0, 1.0]
+
+plot_cfg:
+  grid: [2, 2]
+  save_pdf: true
+  save_individual_cases: true
+
+case_order: [standard, dynamics_switching, colored_noise, length_generalization]
+standalone_case_order: [standard, dynamics_switching, colored_noise, length_generalization]
+
+model_labels:
+  GPT-2: GPT-2
+  SSM: SSM
+  Mamba: Mamba
+  gpt2: GPT-2
+  ssm: SSM
+  mamba: Mamba
+
+baseline_labels:
+  KF: KF
+  EKF: EKF
+  kf: KF
+  ekf: EKF
+
+color_map:
+  KF: C0
+  EKF: C0
+  GPT-2: C1
+  SSM: C2
+  Mamba: C2
+
+figsize_2x2: [7.0, 5.0]
+figsize_single: [3.4, 2.4]

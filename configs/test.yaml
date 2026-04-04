@@ -1,0 +1,38 @@
+system: "lti" # "drone" or "lti"
+
+# Monte Carlo evaluation.
+n_traj: 10000
+H: 1
+L: null  # null means full context
+
+# Cases to run. Supported names are:
+# standard, dynamics_switching, colored_noise, length_generalization
+test_cases:
+  - standard
+  - dynamics_switching
+  - colored_noise
+  - length_generalization
+
+# Standard-case model directories.
+model_run_dirs_standard:
+  - outputs/lti/gpt2-no_input-H1-S50-Lfull-ep50
+  - outputs/lti/ssm-no_input-H1-S50-Lfull-ep50
+
+# Length-generalization case.
+model_run_dirs_length_generalization:
+  - outputs/lti/gpt2-no_input-H1-S30-Lfull-ep50-length_generalization
+  - outputs/lti/ssm-no_input-H1-S30-Lfull-ep50-length_generalization
+
+# Colored-noise case.
+model_run_dirs_colored_noise:
+  - outputs/lti/gpt2-no_input-H1-S50-Lfull-ep50-colored_noise
+  - outputs/lti/ssm-no_input-H1-S50-Lfull-ep50-colored_noise
+
+# Switching-system case. Uses standard models.
+model_run_dirs_dynamics_switching:
+  - outputs/lti/gpt2-no_input-H1-S50-Lfull-ep50
+  - outputs/lti/ssm-no_input-H1-S50-Lfull-ep50
+
+
+# Output location.
+save_dir: "test"

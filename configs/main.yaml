@@ -1,0 +1,4 @@
+generate_data_flag: true
+train_flag: true
+test_flag: true
+plot_flag: true
