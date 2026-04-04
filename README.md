@@ -1,6 +1,6 @@
 This is the code for this paper "On the Generalization Properties of Selective State-Space Models for Filtering Tasks for Unknown Systems" by Alex Tang*, M. Emrullah Ildiz*, Batin Kurt, Samet Oymak, and Necmiye Ozay.
 
-# Mamba Output Predictor
+# SSMs for Filtering
 
 This repository provides a full experimental pipeline for training and evaluating sequence models on filtering tasks under unknown system dynamics. The code supports both linear time-invariant (LTI) and drone systems, with experiments that cover:
 
