@@ -39,7 +39,7 @@ max_len: 120
 # SSM settings.
 ssm_d_model: 32
 ssm_n_layer: 1
-n_x: 256
+n_x: 32
 s_A: -0.1
 use_delta: true
 fix_sA: false
@@ -47,6 +47,6 @@ fix_sA: false
 # Mamba settings.
 mamba_d_model: 128
 mamba_n_layer: 4
-d_state: 256
+d_state: 32
 d_conv: 4
 expand: 2
