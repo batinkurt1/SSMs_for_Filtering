@@ -36,6 +36,7 @@ state_dimension: 5
 input_dimension: 2
 output_dimension: 3
 matrix_dist: uniform
+
 # Desired spectral radius used when sampling random A; keeps dynamics stability controlled.
 target_rho: 0.95
 

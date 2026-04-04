@@ -37,7 +37,7 @@ n_head: 2
 max_len: 120
 
 # SSM settings.
-ssm_d_model: 512
+ssm_d_model: 32
 ssm_n_layer: 1
 n_x: 256
 s_A: -0.1
