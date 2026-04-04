@@ -124,7 +124,7 @@ Each test result includes:
 `src/plotting/plot_results.py` reads per-case test pickles from `configs/plot.yaml` and generates:
 
 - A combined 2x2 case figure
-- Optional per-case standalone figures
+- Per-case standalone figures
 
 Default output directory is `plots`.
 
@@ -152,8 +152,3 @@ python main.py
 - `test` for serialized test metrics
 - `plots` for RMS figures
 
-## Reproducibility
-
-- Seeds are controlled in config files (for example, `train.yaml` contains `seed`).
-- Test cases and model run directories are explicitly selected in `configs/test.yaml`.
-- Plot inputs are explicitly mapped in `configs/plot.yaml`.
