@@ -1,0 +1,10 @@
+einops
+matplotlib
+mamba-ssm
+numpy
+pytorch-lightning
+PyYAML
+tensorboard
+torch
+tqdm
+transformers

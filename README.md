@@ -26,15 +26,16 @@ The pipeline compares learned models (Selective SSM, GPT-2, Mamba) against class
 
 Use Python 3.10+ (recommended).
 
-Install dependencies:
+Install dependencies from the repository root:
 
 ```bash
-pip install numpy pyyaml tqdm matplotlib torch pytorch-lightning transformers einops mamba-ssm
+pip install -r requirements.txt
 ```
 
 Notes:
 
-- `mamba-ssm` and `torch` may require environment-specific installation steps depending on your CUDA/PyTorch stack.
+- `torch` and `mamba-ssm` may require environment-specific installation steps depending on your CUDA/PyTorch stack.
+- If you need a CUDA-specific PyTorch build, install it using the official PyTorch instructions before or after the requirements file, depending on your platform.
 - Run commands from the repository root (the folder containing `main.py`).
 
 ## Configuration Overview
